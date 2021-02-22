@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+    <div id="app">{{text}}</div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const { ref } = Vue;
+      const App = {
+        setup() {
+          const text = ref("hello vue");
+          setTimeout(() => {
+            text.value = "coin master";
+            console.log(text.value);
+          }, 1000);
+          return { text };
+        },
+      };
+
+      Vue.createApp(App).mount("#app");
+    </script>
+  </body>
+</html>
